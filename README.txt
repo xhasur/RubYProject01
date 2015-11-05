@@ -1,1 +1,1 @@
-proyect ruby on rails
+proyecto ruby on rails
