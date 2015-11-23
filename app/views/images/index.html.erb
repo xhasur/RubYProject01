@@ -1,1 +1,21 @@
-<h1><%= t("hello") %></h1>
+<h1><%= t(".title") %></h1>
+
+<p>
+  <%= link_to t(".new_link"),new_image_path %>
+</p>
+
+<div class="images">
+  <%= render @images %>
+</div>
+
+<!--
+<div class="image box">
+
+  <#%- @images.each do |image| %>
+  <div class="image content">
+    <h2><%#= image.name %></h2>
+  </div>
+  <#% end %>
+
+</div>
+-->

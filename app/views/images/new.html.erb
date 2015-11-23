@@ -1,0 +1,46 @@
+<%- model_name = @image.class.model_name.human %>
+
+<h1><%= t(".title",model: model_name) %></h1>
+
+<!--
+<%#-if @image.errors.any?%>
+<div class="form error">
+  Ha ocurrido un error
+</div>
+<%#end %>
+-->
+
+<%= form_for @image, builder: CustomFormBuilder do |form| %>
+
+    <%= form.form_error%>
+
+    <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <%= form.field_error :name %>
+
+      <!--
+        <%#-if @image.errors[:name].any?%>
+           <span class="field-error">
+               <%=@image.errors[:name].first%>
+           </span>
+         <%#end %>
+         -->
+    </div>
+
+    <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+    </div>
+    <div class="field">
+      <%= form.label :category %>
+      <%= form.collection_select :category , image_categories,:last,:first%>
+    </div>
+    <div class="field">
+      <%= form.label :tags_texts %>
+      <%= form.text_field :tags_texts %>
+    </div>
+    <div class="field">
+    <%= form.submit%>
+    </div>
+<% end %>
